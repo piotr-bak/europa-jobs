@@ -19,8 +19,8 @@ export function RecommendedPosts( { posts }: { readonly posts: ArticleItem[] } )
             loop
             autoplay={{ delay: 2500 }}
         >
-            {posts && posts.map( ( item, index ) => (
-                <SwiperSlide key={`slide-item-${index}`}>
+            {posts?.map( ( item, index ) => (
+                <SwiperSlide key={`slide-item-${item.key || index}`}>
                     <ArticleCard
                         title={item.title}
                         href={item.key}
