@@ -3,12 +3,15 @@ import { ENDPOINT_ADDRESS } from "../constants/endpointAddress";
 export async function getBlogData( slug?: string, page?: number ) {
     const url = new URL( ENDPOINT_ADDRESS );
 
-    slug ?
-        url.pathname += `/article/${slug}` :
+    if ( slug ) {
+        url.pathname += `/article/${slug}`;
+    } else {
         url.searchParams.append( 'Type', 'candidate' );
+    }
 
-    page ?
-        url.searchParams.append( 'Page', String( page ) ) : null;
+    if ( page ) {
+        url.searchParams.append( 'Page', String( page ) );
+    }
 
 
     const res = await fetch( url.toString(), {
