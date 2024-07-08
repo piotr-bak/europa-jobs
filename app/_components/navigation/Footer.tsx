@@ -17,8 +17,8 @@ export function Footer() {
             </div>
 
             <div className="col-start-2 laptop:col-start-3 col-end-12 py-12 -mr-2 divide-x-2 divide-concrete-gray-300 text-center laptop:text-right">
-                {routes && routes.map( ( route, index ) => (
-                    <Link key={`route-${index}`}
+                {routes?.map( ( route, index ) => (
+                    <Link key={`${route}-${index}`}
                         className="px-4 hover:text-congress-blue-600 text-xl laptop:text-base leading-10 laptop:leading-normal"
                         href={route.href}
                     >

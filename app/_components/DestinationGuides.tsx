@@ -14,7 +14,7 @@ export function DestinationGuides() {
                         <>
                             <ul className="mb-8 flex flex-row gap-6 laptop:gap-3 flex-wrap justify-center">
                                 {destinations.map( ( item, index ) => (
-                                    <li key={`destination-guide-${index}`} className="w-60 h-48 ">
+                                    <li key={`${item}-${index}`} className="w-60 h-48 ">
                                         <DestinationCard
                                             country={item.destination}
                                             glyph={item.glyph}

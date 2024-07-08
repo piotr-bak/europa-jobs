@@ -25,7 +25,7 @@ export function FeaturedArticle( { title, href, mediaUrl, date, tags }: Readonly
             <div className='order-first laptop:order-last laptop:w-5/12'>
                 <figure className="relative w-full h-48 tablet:h-80 laptop:h-full">
                     {( tags && tags.length > 0 ) && tags.map( ( tag, index ) => (
-                        <ArticleTag key={index}>{tag}</ArticleTag>
+                        <ArticleTag key={`${tag}-${index}`}>{tag}</ArticleTag>
                     ) )}
                     <Image
                         src={hdImg}

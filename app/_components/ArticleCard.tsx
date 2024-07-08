@@ -24,7 +24,7 @@ export function ArticleCard( { title, href, mediaUrl, date, tags }: Readonly<Art
                         <div className="absolute inset-0 z-20 p-4 flex flex-col justify-between">
                             <div>
                                 {( tags && tags.length > 0 ) && tags.map( ( tag, index ) => (
-                                    <ArticleTag key={index}>{tag}</ArticleTag>
+                                    <ArticleTag key={`${tag}-${index}`}>{tag}</ArticleTag>
                                 ) )}
                             </div>
                             <h3 className='text-concrete-gray-900 mt-0 text-white text-xl'>{title}</h3>

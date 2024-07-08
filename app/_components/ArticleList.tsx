@@ -17,8 +17,8 @@ export function ArticleList( { articles }: { readonly articles: ArticleItem[] } 
     return (
         <div>
             <ul className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4 tablet:gap-6 laptop:gap-8">
-                {itemsToDisplay.map( ( item: ArticleItem, index ) => (
-                    <li key={index}>
+                {itemsToDisplay.map( ( item: ArticleItem ) => (
+                    <li key={item.id}>
                         <ArticleCard
                             title={item.title}
                             href={item.key}
