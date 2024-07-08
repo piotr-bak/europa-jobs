@@ -1,9 +1,12 @@
 'use client';
 
-import type { NavLink } from "@/app/_types";
+import React from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+
+import type { NavLink } from "@/app/_types";
+
 
 export function NavLink( { href, children }: NavLink ) {
     const pathname = usePathname();
@@ -19,7 +22,7 @@ export function NavLink( { href, children }: NavLink ) {
         <>
             <Link
                 href={href}
-                className={`hover:text-congress-blue-600 ${isActive() ? 'text-congress-blue font-semibold' : ''}`}
+                className={`hover:text-congress-blue-600 ${isActive() ? 'text-congress-blue-400 laptop:text-congress-blue font-semibold' : ''} text-3xl laptop:text-base`}
             >
                 {children}
             </Link>

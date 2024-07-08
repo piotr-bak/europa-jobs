@@ -1,7 +1,8 @@
 import type { BlogData } from "../_types";
+
+import { ArticleList } from "./ArticleList";
 import { FeaturedArticle } from "./FeaturedArticle";
 import { getBlogData } from "../_lib/api/getBlogData";
-import { ArticleList } from "./ArticleList";
 import { formatDate } from "../_lib/utils/formatDate";
 
 export async function ArticleSection() {
@@ -13,7 +14,7 @@ export async function ArticleSection() {
 
     return (
         <section className="grid grid-cols-12">
-            <div className="col-start-3 col-end-11 mb-8">
+            <div className="col-start-1 col-end-13 laptop:col-start-3 laptop:col-end-11 mb-16 mx-8 laptop:mx-0">
                 <FeaturedArticle
                     title={featuredArticle.title}
                     href={featuredArticle.key}
@@ -21,7 +22,7 @@ export async function ArticleSection() {
                     date={formatDate( featuredArticle.addedAt )}
                 />
             </div>
-            <div className="col-start-3 col-end-11">
+            <div className="col-start-1 col-end-13 laptop:col-start-3 laptop:col-end-11 mx-8 laptop:mx-0">
                 <ArticleList articles={otherArticles} />
             </div>
         </section>

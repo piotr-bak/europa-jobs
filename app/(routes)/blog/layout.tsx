@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+
 import { Inter } from "next/font/google";
 import './globals.css';
-import { Navbar } from "@/app/_components/navigation/Navbar";
 import Image from "next/image";
+
+import { Footer } from "@/app/_components/navigation/Footer";
+import { Navbar } from "@/app/_components/navigation/Navbar";
 import bgImg from '@/public/images/europe-dotted.png'
 
 const inter = Inter( { subsets: ["latin"] } );
@@ -25,9 +28,10 @@ export default function RootLayout( {
           src={bgImg}
           alt={'dotted shape of Europe'}
           aria-hidden={true}
-          className='w-1/3 opacity-[.15] fixed right-0 top-24 -z-10'
+          className='w-1/3 opacity-[.15] fixed right-0 top-24 -z-10 select-none'
         />
         {children}
+        <Footer />
       </body>
     </html>
   );

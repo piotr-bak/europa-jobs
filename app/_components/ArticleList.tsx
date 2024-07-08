@@ -1,9 +1,11 @@
 'use client'
 
+import { useState } from "react";
+
 import type { ArticleItem } from "@/app/_types";
+
 import { ArticleCard } from "./ArticleCard";
 import { formatDate } from "../_lib/utils/formatDate";
-import { useState } from "react";
 
 
 export function ArticleList( { articles }: { articles: ArticleItem[] } ) {
@@ -14,7 +16,7 @@ export function ArticleList( { articles }: { articles: ArticleItem[] } ) {
 
     return (
         <div>
-            <ul className="grid grid-cols-3 gap-8">
+            <ul className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4 tablet:gap-6 laptop:gap-8">
                 {itemsToDisplay.map( ( item: ArticleItem, index ) => (
                     <li key={index}>
                         <ArticleCard
@@ -26,7 +28,14 @@ export function ArticleList( { articles }: { articles: ArticleItem[] } ) {
                     </li>
                 ) )}
             </ul>
-            <button onClick={() => setShowAll( prev => !prev )}>{showAll ? 'see less' : 'see more'}</button>
+            <div className="w-full text-center py-4">
+                <button
+                    className="bg-white mt-8 px-8 py-2 text-xs rounded-xl hover:bg-congress-blue-600 hover:text-concrete-gray-50 uppercase border-2 border-solid border-concrete-gray-300 text-concrete-gray-900"
+                    onClick={() => setShowAll( prev => !prev )}
+                >
+                    {showAll ? 'see less' : 'see more'}
+                </button>
+            </div>
         </div>
     )
 }

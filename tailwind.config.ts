@@ -21,6 +21,7 @@ const config: Config = {
           '800': '#0056d7',
           DEFAULT: '#004596', //900
           '950': '#062f65',
+          '975': '#031935'
         },
         'chateau-green': {
           '50': '#eefff5',
@@ -74,7 +75,7 @@ const config: Config = {
           '900': '#6d2e38',
           '950': '#41161d',
         },
-      }
+      },
     },
     screens: {
       'tablet': '34.375rem',

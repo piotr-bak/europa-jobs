@@ -1,15 +1,16 @@
-import type { Route } from "@/app/_types";
-import { routes } from "./routes";
-import { NavLink } from "./NavLink";
-import logo from '@/app/_assets/europa-logo-full.svg';
+'use client'
+
 import Image from "next/image";
-import { LoginBtn } from "./LoginBtn";
 import Link from "next/link";
+
+import logo from '@/public/images/europa-logo-full.svg';
+
+import { ClientSideMenu } from './ClientSideMenu';
 
 export function Navbar() {
     return (
-        <nav className="flex flex-row justify-center text-concrete-gray-700 fixed w-full h-24 z-50 bg-gradient-to-t from-concrete-gray to-congress-blue-100">
-            <section className={'flex flex-row items-center justify-between pt-10 pb-6 w-screen laptop:w-4/5 border-b border-concrete-gray-300 capitalize'}>
+        <nav className="grid grid-cols-12 justify-center fixed w-full h-24 z-40 bg-gradient-to-t from-concrete-gray to-congress-blue-100">
+            <section className='col-start-1 col-end-13 laptop:col-start-2 laptop:col-end-12 flex flex-col laptop:flex-row items-center pt-10 pb-6 border-b border-concrete-gray-300 capitalize'>
                 <Link
                     href="/blog"
                 >
@@ -20,18 +21,7 @@ export function Navbar() {
                         className=""
                     />
                 </Link>
-                <ul className="flex flex-row space-x-10">
-                    {( routes as Route[] ).map( ( route ) => {
-                        return (
-                            <li key={route.name}>
-                                <NavLink href={route.href}>
-                                    {route.name}
-                                </NavLink>
-                            </li>
-                        )
-                    } )}
-                </ul>
-                <LoginBtn />
+                <ClientSideMenu />
             </section>
         </nav>
     )

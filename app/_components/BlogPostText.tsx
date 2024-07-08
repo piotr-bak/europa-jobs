@@ -11,7 +11,7 @@ export async function BlogPostText( { className, textData }: BlogPostText ) {
             for ( let i = 0; i < articleLength; ++i ) {
                 if ( parsedContent.headings && i < headingsCount ) {
                     content.push(
-                        <h2 key={`heading-${i}`} className="font-semibold my-2 text-base">{parsedContent?.headings[i]}</h2>
+                        <h2 key={`heading-${i}`} className="font-semibold my-2 text-base text-lg">{parsedContent?.headings[i]}</h2>
                     )
                 }
                 if ( parsedContent.paragraphs && i < paragraphsCount ) {

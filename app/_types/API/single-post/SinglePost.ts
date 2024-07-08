@@ -1,6 +1,6 @@
-import type { ArticleItem } from "../ArticleItem";
 import type { Offer } from "./Offer";
 import type { Section } from "./Section";
+import type { ArticleItem } from "../ArticleItem";
 
 export interface SinglePost {
     categoryId: number;
