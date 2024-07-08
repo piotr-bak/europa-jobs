@@ -7,7 +7,7 @@ import placeholderIcon from '@/public/images/icons/briefcase.png'
 
 import { JOB_BOARD_ADDRESS } from "../_lib/constants/jobBoardAddress";
 
-export function OfferCard( { offer }: { offer: Offer } ) {
+export function OfferCard( { offer }: { readonly offer: Offer } ) {
     const { location, employer, salary } = offer;
     const rateType = salary?.frequency === 'hourly' ? 'hour' : 'month';
 

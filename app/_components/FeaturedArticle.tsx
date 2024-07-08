@@ -9,7 +9,7 @@ import { ArticleTag } from "./ArticleTag";
 const dummyText =
     `Kalendarze reklamowe powinny robić dobre wrażenie na osobach, którym je wręczysz. Mimo że mogą być uznane jedynie za gadżet reklamowy – dobrze wykonany, przemyślany produkt zyskuje zupełnie nową wartość, czyli użyteczność. Dowiedz się, czym jeszcze może się wyróżniać kalendarz firmowy.`
 
-export function FeaturedArticle( { title, href, mediaUrl, date, tags }: ArticleCard ) {
+export function FeaturedArticle( { title, href, mediaUrl, date, tags }: Readonly<ArticleCard> ) {
 
     //the below is for the MVP purposes only, final implementation should preferably opt for a more sophisticated mechanism - also requriring API adjustment
     const hdImg = mediaUrl.replace( '_medium', '' );

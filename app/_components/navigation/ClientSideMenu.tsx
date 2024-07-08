@@ -19,10 +19,10 @@ export function ClientSideMenu() {
                     {( routes as Route[] ).map( ( route ) => {
                         return (
                             <li key={route.name}
-                                className="p-6 laptop:p-0"
-                                onClick={() => setMenuVisible( false )}>
+                                className="p-6 laptop:p-0">
                                 <NavLink
                                     href={route.href}
+                                    onClick={() => setMenuVisible( false )}
                                 >
                                     {route.name}
                                 </NavLink>

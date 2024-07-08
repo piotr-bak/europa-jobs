@@ -1,6 +1,6 @@
-import type { BlogPostText } from "../_types";
+import type { BlogPostTextProps } from "../_types";
 
-export async function BlogPostText( { className, textData }: BlogPostText ) {
+export async function BlogPostText( { className, textData }: Readonly<BlogPostTextProps> ) {
     const { paragraphsCount, headingsCount, ...parsedContent } = textData;
     const articleLength = paragraphsCount > headingsCount ? paragraphsCount : headingsCount;
 

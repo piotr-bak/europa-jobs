@@ -1,6 +1,6 @@
 import type { ParsedBlogPostText } from "./ParsedBlogPostText";
 
-export interface BlogPostText {
+export interface BlogPostTextProps {
     className?: string;
     textData: ParsedBlogPostText
 }

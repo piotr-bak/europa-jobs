@@ -5,7 +5,7 @@ import { formatDate } from "../_lib/utils/formatDate";
 import { parseContent } from "../_lib/utils/parseContent";
 import { BlogPostData } from "../_types";
 
-export async function BlogPost( { postData }: { postData: BlogPostData } ) {
+export async function BlogPost( { postData }: { readonly postData: BlogPostData } ) {
     const { title, addedAt, categoryName, mediaUrl, paragraphs } = postData;
     const textData = await parseContent( paragraphs )
 

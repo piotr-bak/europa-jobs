@@ -3,7 +3,7 @@ import type { DestinationCard } from "../_types"
 import Image from "next/image";
 import Link from "next/link";
 
-export function DestinationCard( { country, glyph, href }: DestinationCard ) {
+export function DestinationCard( { country, glyph, href }: Readonly<DestinationCard> ) {
     return (
         <Link className={'text-md font-bold place-self-end '} href={`${href}`}>
             <section className="flex rounded-xl overflow-hidden bg-white flex-col hover:translate-y-1">

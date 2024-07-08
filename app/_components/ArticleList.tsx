@@ -8,7 +8,7 @@ import { ArticleCard } from "./ArticleCard";
 import { formatDate } from "../_lib/utils/formatDate";
 
 
-export function ArticleList( { articles }: { articles: ArticleItem[] } ) {
+export function ArticleList( { articles }: { readonly articles: ArticleItem[] } ) {
     const DISPLAY_ELEMENT_COUNT = 6;
     const [showAll, setShowAll] = useState( false );
 

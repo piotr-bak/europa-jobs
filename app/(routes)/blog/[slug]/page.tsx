@@ -4,7 +4,7 @@ import { RelatedOffers } from "@/app/_components/RelatedOffers";
 import { SubscribeForm } from "@/app/_components/SubscribeForm";
 import { getBlogData } from "@/app/_lib/api/getBlogData"
 
-export default async function Page( { params }: { params: { slug: string } } ) {
+export default async function Page( { params }: { readonly params: { readonly slug: string } } ) {
     const data = await getBlogData( params.slug );
     const { recommended, offers, ...postData } = data;
     const paragraphs = data.sections[0].content;

@@ -2,7 +2,7 @@ import type { Offer } from "../_types";
 
 import { OfferCard } from "./OfferCard";
 
-export function RelatedOffers( { offers }: { offers: Offer[] } ) {
+export function RelatedOffers( { offers }: { readonly offers: Offer[] } ) {
     return (
         <ul>
             {offers && offers.map( ( item: Offer, index: number ) => (

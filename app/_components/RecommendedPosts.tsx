@@ -10,7 +10,7 @@ import { formatDate } from '../_lib/utils/formatDate';
 import { ArticleItem } from '../_types';
 
 
-export function RecommendedPosts( { posts }: { posts: ArticleItem[] } ) {
+export function RecommendedPosts( { posts }: { readonly posts: ArticleItem[] } ) {
     return (
         <Swiper
             modules={[Autoplay]}
