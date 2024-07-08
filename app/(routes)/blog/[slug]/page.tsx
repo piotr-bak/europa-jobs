@@ -19,13 +19,12 @@ export default async function Page( { params }: { params: { slug: string } } ) {
             </main>
             <aside className="laptop:col-start-9 laptop:col-end-12">
                 <section className="sticky laptop:top-48 laptop:max-w-[24rem]">
-                    <div className="mb-16">
-                        <h3 className="mt-16 laptop:mt-0 mb-8 text-xl pb-4 border-b border-solid border-concrete-gray-200">Subscribe:</h3>
-                        <SubscribeForm />
+                    <div className="mb-16 mx-20 laptop:mx-0">
+                        <h3 className="mt-16 laptop:mt-0 mb-8 text-xl pb-4 border-b border-solid border-concrete-gray-200">Related offers:</h3>
+                        <RelatedOffers offers={offers} />
                     </div>
-
-                    <h3 className="mb-8 text-xl pb-4 border-b border-solid border-concrete-gray-200">Related offers:</h3>
-                    <RelatedOffers offers={offers} />
+                    <h3 className="mb-8 mx-20 laptop:mx-0 text-xl pb-4 border-b border-solid border-concrete-gray-200">Subscribe:</h3>
+                    <SubscribeForm />
                 </section>
             </aside>
         </div>

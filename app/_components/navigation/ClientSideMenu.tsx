@@ -18,8 +18,12 @@ export function ClientSideMenu() {
                 <ul className="flex flex-col-reverse laptop:flex-row laptop:space-x-10 laptop:ml-12">
                     {( routes as Route[] ).map( ( route ) => {
                         return (
-                            <li key={route.name} className="p-6 laptop:p-0">
-                                <NavLink href={route.href}>
+                            <li key={route.name}
+                                className="p-6 laptop:p-0"
+                                onClick={() => setMenuVisible( false )}>
+                                <NavLink
+                                    href={route.href}
+                                >
                                     {route.name}
                                 </NavLink>
                             </li>

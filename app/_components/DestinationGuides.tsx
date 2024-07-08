@@ -11,19 +11,27 @@ export function DestinationGuides() {
                 </div>
                 <div className="col-start-1 col-end-4 laptop:col-start-3 laptop:col-end-11 ">
                     {destinations && (
-
-                        <ul className="mb-8 flex flex-row gap-6 laptop:gap-3 flex-wrap justify-center">
-                            {destinations.map( ( item, index ) => (
-                                <li key={`destination-guide-${index}`} className="w-60 h-48 ">
-                                    <DestinationCard
-                                        country={item.destination}
-                                        glyph={item.glyph}
-                                        href={item.href}
-                                    />
-                                </li>
-                            ) )}
-                        </ul>
-
+                        <>
+                            <ul className="mb-8 flex flex-row gap-6 laptop:gap-3 flex-wrap justify-center">
+                                {destinations.map( ( item, index ) => (
+                                    <li key={`destination-guide-${index}`} className="w-60 h-48 ">
+                                        <DestinationCard
+                                            country={item.destination}
+                                            glyph={item.glyph}
+                                            href={item.href}
+                                        />
+                                    </li>
+                                ) )}
+                            </ul>
+                            <div className="w-full text-center py-4">
+                                <button
+                                    type="button"
+                                    className="bg-white mt-8 px-8 py-4 text-base rounded-xl hover:bg-congress-blue-600 hover:text-concrete-gray-50 text-concrete-gray-900 font-semibold"
+                                >
+                                    View all
+                                </button>
+                            </div>
+                        </>
                     )}
                 </div>
 

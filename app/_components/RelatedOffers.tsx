@@ -4,12 +4,12 @@ import { OfferCard } from "./OfferCard";
 
 export function RelatedOffers( { offers }: { offers: Offer[] } ) {
     return (
-        <>
+        <ul>
             {offers && offers.map( ( item: Offer, index: number ) => (
                 <li key={`offer-${index}`}>
                     <OfferCard offer={item} />
                 </li>
             ) )}
-        </>
+        </ul>
     )
 }

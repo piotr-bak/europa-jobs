@@ -12,7 +12,7 @@ export function OfferCard( { offer }: { offer: Offer } ) {
     const rateType = salary?.frequency === 'hourly' ? 'hour' : 'month';
 
     return (
-        <div className="my-4 p-8 rounded-xl bg-white overflow-hidden bg-gradient-to-tr from-white to-swiss-coffee-50 max-w-[24rem]">
+        <div className="my-4 p-8 rounded-xl bg-white overflow-hidden bg-gradient-to-tr from-white to-swiss-coffee-50 max-w-[24rem] hover:translate-y-1 hover:translate-x-1">
             <Link
                 href={`${JOB_BOARD_ADDRESS}/${offer.slug}`}
                 className="flex items-start items-center"

@@ -30,10 +30,11 @@ export function ArticleList( { articles }: { articles: ArticleItem[] } ) {
             </ul>
             <div className="w-full text-center py-4">
                 <button
-                    className="bg-white mt-8 px-8 py-2 text-xs rounded-xl hover:bg-congress-blue-600 hover:text-concrete-gray-50 uppercase border-2 border-solid border-concrete-gray-300 text-concrete-gray-900"
+                    type="button"
+                    className="bg-white mt-8 px-8 py-4 text-base rounded-xl hover:bg-congress-blue-600 hover:text-concrete-gray-50 text-concrete-gray-900 font-semibold"
                     onClick={() => setShowAll( prev => !prev )}
                 >
-                    {showAll ? 'see less' : 'see more'}
+                    {showAll ? 'See less' : 'See more'}
                 </button>
             </div>
         </div>

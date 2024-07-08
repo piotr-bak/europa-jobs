@@ -8,7 +8,7 @@ import { ArticleTag } from "./ArticleTag";
 export function ArticleCard( { title, href, mediaUrl, date, tags }: ArticleCard ) {
     return (
         <Link className={'text-base font-bold place-self-end'} href={`/blog/${href}`}>
-            <section className="flex p-0.5 rounded-xl overflow-hidden bg-white flex-col">
+            <section className="flex p-0.5 rounded-xl overflow-hidden bg-white flex-col hover:translate-y-1 hover:translate-x-1">
                 <div className='w-full'>
                     <figure className="relative w-full h-64">
                         <Image

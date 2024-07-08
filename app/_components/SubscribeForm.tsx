@@ -12,7 +12,7 @@ export function SubscribeForm() {
     };
 
     return (
-        <div className="bg-gradient-to-tr from-white to-swiss-coffee-50 rounded-xl p-8 laptop:max-w-[24rem]">
+        <div className="bg-gradient-to-tr from-white to-swiss-coffee-50 rounded-xl p-8 laptop:max-w-[24rem] mx-20 laptop:mx-0">
             {alreadySubscribed ?
                 <p>You&apos;ve successfully subscribed to our newsletter!</p> :
                 <>
@@ -25,7 +25,7 @@ export function SubscribeForm() {
                             </label>
                             <input type='checkbox' id='tos' required />
                         </div>
-                        <button className="w-full border-2 border-solid border-concrete-gray-300 bg-concrete-gray-800 rounded-xl text-white uppercase p-3 hover:bg-congress-blue-600">subscribe</button>
+                        <button className="w-full bg-concrete-gray-800 rounded-xl text-white uppercase p-3 hover:bg-congress-blue-600">subscribe</button>
                     </form>
                 </>
             }
