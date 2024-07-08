@@ -28,7 +28,26 @@ export async function parseContent( htmlContent: string ): Promise<ParseResult> 
     let currentTag: string | undefined = undefined;
     let isFirstParagraph = true;
     let currentContent: string = '';
-    let insideEmTag = false;  // Flag to track if inside <em> tag
+    let insideEmTag = false;
+
+    const handleHeading = ( content: string ) => {
+        if ( content.trim() ) {
+            result.headings.push( content.trim() );
+            result.headingsCount++;
+        }
+    };
+
+    const handleParagraph = ( content: string ) => {
+        if ( content.trim() ) {
+            if ( isFirstParagraph ) {
+                result.lead = content.trim();
+                isFirstParagraph = false;
+            } else {
+                result.paragraphs.push( content.trim() );
+                result.paragraphsCount++;
+            }
+        }
+    };
 
     const parser = new Parser(
         {
@@ -37,7 +56,7 @@ export async function parseContent( htmlContent: string ): Promise<ParseResult> 
                     currentTag = name;
                     currentContent = '';
                 } else if ( name === 'em' ) {
-                    insideEmTag = true; // Set flag when entering <em> tag
+                    insideEmTag = true;
                 }
             },
             ontext( text ) {
@@ -47,27 +66,22 @@ export async function parseContent( htmlContent: string ): Promise<ParseResult> 
             },
             onclosetag( tagname ) {
                 if ( tagname === 'em' ) {
-                    insideEmTag = false;  // Reset flag when exiting <em> tag
-                } else if ( currentTag === tagname && !insideEmTag ) {
-                    if ( tagname === 'h2' ) {
-                        if ( currentContent.trim() ) {
-                            result.headings.push( currentContent.trim() );
-                            result.headingsCount++;
-                        }
-                    } else if ( tagname === 'p' ) {
-                        if ( currentContent.trim() ) {
-                            if ( isFirstParagraph ) {
-                                result.lead = currentContent.trim();
-                                isFirstParagraph = false;
-                            } else {
-                                result.paragraphs.push( currentContent.trim() );
-                                result.paragraphsCount++;
-                            }
-                        }
-                    }
-                    currentTag = undefined;
-                    currentContent = '';
+                    insideEmTag = false;
+                    return;
                 }
+
+                if ( currentTag !== tagname || insideEmTag ) {
+                    return;
+                }
+
+                if ( tagname === 'h2' ) {
+                    handleHeading( currentContent );
+                } else if ( tagname === 'p' ) {
+                    handleParagraph( currentContent );
+                }
+
+                currentTag = undefined;
+                currentContent = '';
             },
         },
         { decodeEntities: true }
